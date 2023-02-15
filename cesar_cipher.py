@@ -17,10 +17,13 @@ def enter_message():
     else:
         message = input("what message would you like to decrypt: ").upper()
     while True:
-        shift = input("What is the shift number: ")
+        shift = input("What is the shift number from 1 to 26: ")
         if shift.isdigit():
             shift = int(shift)
-            break
+            if shift<=26:
+                break
+            else:
+                print("You can only shift the number from 1 to 26. So, enter again")
         else:
             print("Invalid shift")
     return mode, message, shift
